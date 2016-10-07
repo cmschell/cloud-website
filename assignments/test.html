@@ -1,0 +1,261 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAssigment</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/nav.css" rel="stylesheet" />
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+    <link href="css/colorbox.css" rel="stylesheet"/>
+
+
+    
+
+    <style type="text/css">
+        .headertest {
+            padding-top: 50px;
+            height: 400px;
+            /*background-color: coral;*/
+            background-repeat: no-repeat;
+            background-position: center center fixed;
+            background: url(../images/3-cloud-computing.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .intro-message > h1 {
+            margin: 0;
+            padding-top: 50px;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+            font-size: 5em;
+            color: #E88E0C;
+        }
+
+        .intro-header {
+            padding-top: 40px; /* 50 If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+            padding-bottom: 10px;
+            text-align: center;
+            color: #f8f8f8;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px; /* choose any height */
+            background-color: #073f67;
+            color: white;
+        }
+
+        .blur-filter {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        .Unblur-filter {
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            filter: blur(0px);
+        }
+
+        .bodyMain {
+            border: 3px solid blue;
+            margin-top: 47px;
+            background-color: white;
+        }
+
+        .pbody {
+            padding: 40px;
+        }
+    </style>
+
+
+</head>
+<body style="background-color:#d1ecf9;">
+    <div id="bodyBack" class="bodyBack">
+        <!-- Navigation -->
+        <div id="topnav" class="navbar navbar-inverse navbar-fixed-top navbar-custom ">
+
+            <div style="background-color:chocolate;">
+
+                <div class="hidden-sm hidden-xs" style="height: 100px; font-size: large;padding-left:20px;padding-top:10px;background-color:chocolate;">
+                    <div style="display: inline-block;">
+                        <img src="/images/jsmoot081212.png" height="70" />
+
+                        <div style="display: inline-block; padding-left: 20px; vertical-align: top;color: white;">
+                            <h3 style="margin-top:0px;">
+                                Prof. James Smoot III
+                            </h3>
+                            <h4 style="margin-top:-10px;">
+                                DAT 605 Cloud Computing / Development
+                            </h4>
+                        </div>
+                    </div>
+                    <div style="display: inline-block; float: right;padding-right:20px;">
+                        <div style="display: inline-block;">
+                            <img src="/images/nu_logoEmb.png" width="70" />
+                            <img src="/images/manlookingANI.gif" height="70" />
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="navbar-toggle hidden-md hidden-sm hidden-xs" data-toggle="collapse" data-target=".navbar-collapse">
+                        <img src="/images/jsmoot081212.png" height="70" />
+
+                        <div style="display: inline-block; padding-left: 20px; vertical-align: top;color: white;">
+                            <h3 style="margin-top:0px;">
+                                Prof. James Smoot III
+                            </h3>
+                            <h4 style="margin-top:-10px;">
+                                DAT 605 Cloud Computing / Development
+                            </h4>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand hidden-lg " href="/" style="height:30px;padding-top:10px !important;">
+                            <span class="pull-left" style="color:wheat;font-size:.9em;height:30px;vertical-align:middle;font-style: oblique ">
+                                <img src="/images/jsmoot081212.png" style="height:30px;" />
+                                Prof: James Smoot III
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class='nav navbar-nav'><li><a href = '/home/index' class='@ActiveItem('Index', 'Home', null)'>Home</a></li><li><a href ='../../Assigments/ShowAssigment/2' class='@ActiveItem('Assigment1', 'Home', null)'>Assigment 1</a></li><li><a href = '../../Assigments/ShowAssigment/3' class='@ActiveItem('Assigment2', 'Home', null)'>Assigment 2</a></li></ul>
+                    
+                    
+
+
+
+<form action="/Home/LogOut" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="b-L75UZquzPQAkXok5RsK87JM-vJKTPU3-tMywZ88C_NH5MMmIs-r3rceSsRxKw9UXWE09_OF8sY3vDXuhi8Itie4zhJ1MIQxyFmx0pGbXE3hhgV203Uek4iUawWoZRpmQwF9ms4NMnSQ8u2rPSoNA2" />    <ul class="nav navbar-nav navbar-right">
+       
+        <li>
+            <a href="/" title="Manage">Schell Christina</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form><script type="text/javascript">
+    //$(function(){
+    //    $("#loginLink").click(function (event) {
+    //        alert("in the form");
+    //    //    event.preventDefault();
+    //        $("#HeadImage2").hide();
+    //        $("#HeadImage").css("display","none");
+    //    });
+    //});
+    $(document).ready(function () {
+
+        //$(".ajax3").colorbox({ width:"510px",           
+        //    onLoad: function () {
+        //        $('#cboxContent').css({
+        //            "background": "white"
+        //        });
+        //        $('#cboxLoadedContent').css({
+        //            "margin-bottom": "0px",
+        //            "height": "400px"
+        //        });
+        //        //$("body").addClass("blur-filter"); 
+        //        //},
+        //        //onClosed:function(){ 
+        //        //    $("body").removeClass("blur-filter");
+        //        //}
+        //    }});
+        
+        //$(".ajax2").colorbox({ href:"Home/Login",width:"510px",
+        //    onLoad: function () {
+        //        $('#cboxContent').css({
+        //            "background": "white"
+        //        });
+        //        $('#cboxLoadedContent').css({
+        //            "margin-bottom": "0px",
+        //            "height": "400px"
+        //        });
+        //        //$("body").addClass("blur-filter"); 
+        //        //},
+        //        //onClosed:function(){ 
+        //        //    $("body").removeClass("blur-filter");
+        //        //}
+        //    }});
+    });
+</script>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="contId" class="container body-content bodyMain clearfix" >
+        <div class="row "  style="padding-bottom:20px;">
+            
+
+
+
+
+<div id="ass3body" class="row pbody">
+    <div id="psizem3" class="col-lg-12 ">
+
+        <div style="margin-left:-42px;">
+            <img style="width:95%;" src=../img/ass1.png />
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+    <footer class="footer" id="bodyBack2">
+        <div style="padding-left:30px;padding-top:10px;">
+            <p>&copy; 2016 - My ASP.NET Application</p>
+        </div>
+    </footer>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery.colorbox.js"></script>
+
+    <script type="text/javascript">
+        function setSize() {
+            var headhe = $("#topnav").height() + 5 + "px";
+            $("#contId").css("margin-top", headhe);
+        };
+
+        $(window).resize(function () {
+            setSize();
+        });
+
+        $("#bodyBack").load(function () {
+            //  setSize();
+        });
+
+        $(document).ready(function () {
+            var headheight = $("#topnav").height() + 5 + "px";
+               $("#contId").css("margin-top", headheight);
+        });
+
+    </script>
+</body>
+</html>

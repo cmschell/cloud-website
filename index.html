@@ -1,0 +1,198 @@
+<!-- TODO: Fix responsive header (jumbotron) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- jQuery 3.1.1 -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+	<title>Home</title>
+
+<style>
+
+
+.navbar {
+	border: none;
+}
+
+.container-fluid {
+	background-color: #494e6b;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+	color: white	;
+}
+
+.bg {
+  background: url('img/banner.jpg') no-repeat center center;
+  position: absolute; 
+  width: 100%;
+  height: 400px; /*same height as prof's site */
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.bg-overlay {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+  height: 350px;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;
+}
+
+.jumbotron-margin {
+	margin: auto;
+}
+
+.banner-link {
+	color: white;
+}
+
+</style>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">
+      	<span class="pull-left" style="color:wheat">
+            <img src="img/me.jpg" style="height:30px"/>
+                        Christina Schell
+        </span>
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="assignments/one.html">Assignment 1</a></li>
+      <li><a href="#">Assignment 2</a></li> 
+     <!-- <li><a href="#">Page 3</a></li> -->
+    </ul>
+  </div>
+</nav>
+<div class="container">
+<div class="bg hidden-sm hidden-xs"></div>
+<div class="bg-overlay hidden-sm hidden-xs">
+	<div class="jumbotron-margin">
+        <a class="banner-link" href="index.html">
+            <img src="img/me.jpg" height="120"><br>Christina Schell</a>
+    </div>
+  	<img class="hidden-sm hidden-xs" src="img/nu.png" width="75">
+  	<div style="display:inline-block;">
+    	<h1 class="hidden-sm hidden-xs" style="font-size: 36px;">DAT 605 Cloud Computing</h1>
+    </div>
+</div>
+<div class="row">
+	<div class="col-md-11">
+		<h2>Getting Started</h2>
+		<div class="article-inner">
+    <h1 class="article-title">What is cloud computing?</h1>
+
+    <div class="article-content" style="font-size:medium;">
+      <div class=
+      "field field-name-field-ask-quesiton field-type-text-long field-label-hidden view-mode-full">
+      <div class="field-items">
+          <div class="field-item even">
+            What is cloud computing?
+          </div>
+        </div>
+      </div>
+
+      <div class=
+      "field field-name-field-ask-teaser field-type-text-long field-label-hidden view-mode-full">
+      <div class="field-items">
+          <div class="field-item even">
+            It&#8217;s what happens on a network, and it&#8217;s not exactly new&#8230;
+          </div>
+        </div>
+      </div>
+
+      <div class=
+      "field field-name-field-ask-answer field-type-text-long field-label-hidden view-mode-full">
+      <div class="field-items">
+          <div class="field-item even">
+            <p class="p1">First of all, cloud computing has nothing to do with clouds,
+            says <a href="http://www.csail.mit.edu/user/792">Srini Devadas</a>, an Edwin
+            Sibley Webster Professor of Electrical Engineering and a researcher in
+            Computer Science in the Computer Science and Artificial Intelligence
+            Laboratory. And second, the term &#8220;cloud computing&#8221; may have
+            become a buzz phrase in recent years, but the technology behind it has been
+            around for at least fifteen. One of the first major &#8220;cloud&#8221;
+            milestones occurred in 1999 with the arrival of Salesforce, and the 2002
+            introduction of Amazon Web Services was the beginning of what has become a
+            whole weather system of computing options.</p>
+
+            <p class="p1">&#8220;The simplest way to define cloud computing,&#8221; says
+            Devadas, &#8220;is that it involves using a computer that is not on your
+            desk.&#8221; Instead, you&#8217;re using a computing service powered by a
+            cluster of hardware somewhere in the world and delivered to your terminal
+            over the Internet.</p>
+
+            <p class="p1">When hundreds of thousands of servers are networked together
+            (as in, when you have the Internet), these computers provide massive, shared
+            capacity for computing that can be executed through software, storage, or
+            infrastructure. People typically make use of the system through a particular
+            service or application such as Gmail, DropBox, or Facebook. Very little of
+            the data you see on the screen when you subscribe to these services is stored
+            solely on your own computer, and software services like security, search, and
+            storage are all handled within the systems themselves. &#8220;It came about
+            because of economies of scale,&#8221; says Devadas. Centralized processing
+            and storage &#8220;costs less than building and maintaining your own
+            computing cluster, and it&#8217;s more scalable. You use more when you need
+            more.&#8221;</p>
+
+            <p class="p1">You could think of each one of these systems as its own
+            &#8220;little&#8221; cloud, but of course because they&#8217;re on the
+            Internet, they can talk to each other, and sometimes they can even play
+            nicely together&#8212;like when you use your Gmail or FB account to create an
+            account at or sign on to a completely different website or service platform.
+            &#8220;There is no such thing as a private cloud,&#8221; says Devadas.
+            &#8220;Cloud computing is more general and elastic in terms of resources.
+            It&#8217;s commoditized computing.&#8221; &#8212; <em>Elizabeth
+            Earley</em></p>
+
+            <p class="p1"><em>Thanks to 17-year-old Ahmed Hamdy from Alexandria, Egypt,
+            for this question.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="field-label">- Posted:&nbsp;</h2>
+
+      <div class="field-items">
+        <div class="field-item even">
+          <span class="date-display-single" property="dc:date" datatype="xsd:dateTime"
+          content="2013-09-24T00:00:00-04:00">September 24, 2013 <a href=
+          "http://engineering.mit.edu/ask/what-cloud-computing">engineering.mit.edu/ask/what-cloud-computing</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <iframe src=
+    "http://skepticalscience.net/widgets/heat_widget/heat_widget.htm?yr=2009&amp;um=s&amp;sk=button_aa1818.css&amp;fc=%237c1111&amp;bc=%23aa1818&amp;tc=%23ffffff"
+    style="border: medium none; background-color: transparent; overflow: hidden;"
+    frameborder="0" height="310" scrolling="no" width="206" id="sksIframe"></iframe>
+  </div>
+</div>
+</div>
+</div>
+</body>
+
+
+<!-- Extra script -->
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
