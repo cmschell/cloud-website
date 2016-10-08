@@ -1,0 +1,82 @@
+<!-- TODO: Fix responsive header (jumbotron) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- jQuery 3.1.1 -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
+  <script src="../js/map.js"></script>
+
+  <link rel="stylesheet" href="../css/map.css">    
+  <link rel="stylesheet" href="../css/style.css">
+
+
+  <title>Widgets</title>
+
+</head>
+<body style="background-color: #dcd6d9;">
+<div style="background-color:#985e6d;">
+    <div class="hidden-sm hidden-xs" style="height: 100px; font-size: large;padding-left:20px;padding-top:10px;background-color:#985e6d;">
+    <div style="display: inline-block;">
+        <img src="../img/me.jpg" height="70" />
+
+        <div style="display: inline-block; padding-left: 20px; vertical-align: top;color: white;">
+          <h3 style="margin-top:0px;">Christina Schell</h3>
+
+          <h4 style="margin-top:-10px;">DAT 605 Cloud Computing / Development</h4>
+        </div>
+      </div>
+
+      <div style="display: inline-block; float: right;padding-right:20px;">
+        <div style="display: inline-block;"><img src="../img/nu.png" width=
+        "70" /> <img src="../img/corner.gif" height="70" /></div>
+      </div>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav" style="margin-left: 90px;">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="one.html">Assignment 1</a></li>
+      <li class="active"><a href="two.html">Assignment 2</a></li> 
+     <!-- <li><a href="#">Page 3</a></li> -->
+    </ul>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="col-md-10 col-centered">
+    <div class="row" style="padding:40px">
+      <div class="col-md-4">
+        <iframe style="display: block;" src="http://www.willyweather.com/widget/loadView.html?id=57196" width="300" height="228" frameborder="0" scrolling="no"></iframe>
+      <div class="col-sm-6" style="margin-left: -20px;padding-top: 20px;">  
+        <p><span style="display: block; text-align: center;"><a href="http://www.newtechie.com/2014/03/get-free-ip-address-widget-for-your.html"><img alt="IP" border="0" src="http://www.wieistmeineip.de/ip-address/" height="125" width="125" /></a><br /><small><a href="http://www.newtechie.com/2014/03/get-free-ip-address-widget-for-your.html">Get this free</a></small></span></p>
+      </div>
+      <div class="col-sm-4" style="padding-top: 44px;">        
+        <script type="text/javascript" src="http://100widgets.com/js_data.php?id=257"></script>  
+      </div>
+      </div>
+    <div class="col-lg-7" style="float:right">
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <div id="map"></div>
+    </div>
+    </div>
+</div>
+
+</body>
+
+
+  <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmp0jJOIFOuUjBqSuiQzz8aafdkXrMjuU&libraries=places&callback=initAutocomplete"
+         async defer></script>
+</body>
+</html>
