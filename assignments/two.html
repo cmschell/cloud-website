@@ -24,6 +24,27 @@
 
   <title>Widgets</title>
 
+
+  <style>
+  .iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+}
+.iframe-container > *{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+  </style>
+
 </head>
 <body style="background-color: #dcd6d9;">
 <div style="background-color:#985e6d;">
@@ -52,15 +73,45 @@
       <li><a href="../index.html">Home</a></li>
       <li><a href="one.html">Assignment 1</a></li>
       <li class="active"><a href="two.html">Assignment 2</a></li> 
-     <!-- <li><a href="#">Page 3</a></li> -->
+      <li><a href="three.html">Assignment 3</a></li> 
     </ul>
   </div>
 </nav>
 
+
+
 <div class="main-content">
   <div class="col-md-10 col-centered">
     <div class="row" style="padding:40px">
-      <div class="col-md-5">
+
+<div class="col-md-8">
+ <div style="margin-left:50px;">
+    <iframe style="display: block;" src="//www.willyweather.com/widget/loadView.html?id=57196" width="300" height="228" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <div style="margin-left: 6px;padding-top: 43px;">  
+    <p><span style="display: block; text-align: center;"><a href="//www.newtechie.com/2014/03/get-free-ip-address-widget-for-your.html"><img alt="IP" border="0" src="//www.wieistmeineip.de/ip-address/" height="125" width="125" /></a><br /><small><a href="//www.newtechie.com/2014/03/get-free-ip-address-widget-for-your.html">Get this free</a></small></span></p>
+  </div>
+  <div style="padding-top: 44px;margin-left: 11px;">        
+    <div>
+      <div id="my-widget1">color me</div>
+      <div id="my-widget2">color me</div>
+      <div id="my-widget3">color me</div>
+      <button id="green">Go green</button>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="col-md-4">
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <div id="map"></div>
+  </div>
+
+
+
+
+
+     <!-- <div class="col-md-5">
        <div style="margin-left:50px;">
         <iframe style="display: block;" src="//www.willyweather.com/widget/loadView.html?id=57196" width="300" height="228" frameborder="0" scrolling="no"></iframe>
         </div>
@@ -78,7 +129,7 @@
       </div>
     <div class="col-lg-7" style="float:right">
       <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-      <div id="map"></div>
+      <div id="map"></div>-->
     </div>
     </div>
 </div>

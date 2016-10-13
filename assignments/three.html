@@ -1,0 +1,106 @@
+<!-- TODO: Fix responsive header (jumbotron) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- jQuery 3.1.1 -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
+  <link rel="stylesheet" href="../css/style.css">
+
+
+  <title>Ajax and JSON</title>
+
+  <style>
+
+  .img-gap {
+    margin-top: 0;
+  }
+
+  </style>
+
+
+</head>
+<body style="background-color: #dcd6d9;">
+<div style="background-color:#985e6d;">
+    <div class="hidden-sm hidden-xs" style="height: 100px; font-size: large;padding-left:20px;padding-top:10px;background-color:#985e6d;">
+    <div style="display: inline-block;">
+        <img src="../img/me.jpg" height="70" />
+
+        <div style="display: inline-block; padding-left: 20px; vertical-align: top;color: white;">
+          <h3 style="margin-top:0px;">Christina Schell</h3>
+
+          <h4 style="margin-top:-10px;">DAT 605 Cloud Computing / Development</h4>
+        </div>
+      </div>
+
+      <div style="display: inline-block; float: right;padding-right:20px;">
+        <div style="display: inline-block;"><img src="../img/nu.png" width=
+        "70" /> <img src="../img/corner.gif" height="70" /></div>
+      </div>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="one.html">Assignment 1</a></li>
+      <li><a href="two.html">Assignment 2</a></li> 
+      <li class="active"><a href="three.html">Assignment 3</a></li> 
+    </ul>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="col-md-10 col-centered">
+    <div class="row" style="padding:40px">
+     <!-- Assignment 3 HTML here -->
+    <div class="col-centered">
+      <ul></ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+(function() {
+  var row = "";
+  var url = "//whooyou.com/api/jazzwomen/classlist/5";
+  var items = [];
+  $.getJSON( url, {
+    format: "json"
+  })
+    .done(function(data) {
+      Object.keys(data).forEach(function( object ) {
+      console.log(data);
+          console.log(data[object])
+          row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
+          row += "<li style=\"list-style: none;\">";
+          row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
+          row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
+          _tempUrl = data[object]["Website"].replace(/\"/g,"");
+          row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
+          row += data[object]["Description"]+"</p>";
+          row += "</li></div><p>&nbsp;</p>";
+          console.log(row)
+          row = row.replace(/'/g, "\'")
+
+    });
+    $(row).appendTo( ".col-centered ul" );  
+    });
+})();
+</script>
+
+</body>
+</html>
