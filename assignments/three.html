@@ -28,9 +28,10 @@
   </style>
 
 <script>
+window.location = "http://"+document.location.hostname+"/assignments/three.html";
 $(document).ready(function() {
 var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
-jQuery('.navbar-nav li:eq(3)').attr('href',httpURL);
+jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
 });
 </script>
 
