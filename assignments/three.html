@@ -1,18 +1,16 @@
-<!-- TODO: Fix responsive header (jumbotron) -->
-
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- jQuery 3.1.1 -->
-	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+  <!-- jQuery 3.1.1 -->
+  <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
 
   <link rel="stylesheet" href="../css/style.css">
 
@@ -20,19 +18,17 @@
   <title>Ajax and JSON</title>
 
   <style>
-
   .img-gap {
     margin-top: 0;
   }
-
   </style>
-
-<script>
-$(document).ready(function() {
-var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
-jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
-});
-</script>
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+    var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
+    jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
+    });
+  </script>
 
 </head>
 <body style="background-color: #dcd6d9;">
@@ -62,7 +58,7 @@ jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
       <li><a href="../index.html">Home</a></li>
       <li><a href="one.html">Assignment 1</a></li>
       <li><a href="two.html">Assignment 2</a></li> 
-      <li class="active"><a>Assignment 3</a></li> 
+      <li class="active"><a href="three.html">Assignment 3</a></li> 
     </ul>
   </div>
 </nav>
@@ -80,67 +76,9 @@ jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
 
 </body>
 <script>
-<<<<<<< HEAD
-// (function() {
-//   var row = "";
-//   var url = "http://whooyou.com/api/jazzwomen/classlist/5";
-  // $.getJSON( url, {
-  //   format: "json"
-  // })
-  $(document).ready(function() {
-        $.ajax({
-          url: 'http://whooyou.com/api/jazzwomen/classlist/5',
-          type: 'GET',
-          dataType: 'json',
-          success: function(data) {
-                    Object.keys(data).forEach(function( object ) {
-                    console.log(data);
-                        console.log(data[object])
-                        row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
-                        row += "<li style=\"list-style: none;\">";
-                        row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
-                        row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
-                        _tempUrl = data[object]["Website"].replace(/\"/g,"");
-                        row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
-                        row += data[object]["Description"]+"</p>";
-                        row += "</li></div><p>&nbsp;</p>";
-                        console.log(row)
-                        row = row.replace(/'/g, "\'")
-
-                  });
-                  $(row).appendTo( ".col-centered ul" );  
-                  },
-          error: function() { alert('There was an error retrieving musician information'); },
-          //beforeSend: setHeader
-        });
-
-      function setHeader(xhr) {
-        xhr.setRequestHeader('Content-Security-Policy', 'upgrade-insecure-requests'); 
-        //xhr.setRequestHeader('passkey', 'Bar');
-      }
-    //   (function(data) {
-    //   Object.keys(data).forEach(function( object ) {
-    //   console.log(data);
-    //       console.log(data[object])
-    //       row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
-    //       row += "<li style=\"list-style: none;\">";
-    //       row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
-    //       row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
-    //       _tempUrl = data[object]["Website"].replace(/\"/g,"");
-    //       row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
-    //       row += data[object]["Description"]+"</p>";
-    //       row += "</li></div><p>&nbsp;</p>";
-    //       console.log(row)
-    //       row = row.replace(/'/g, "\'")
-
-    // });
-    // $(row).appendTo( ".col-centered ul" );  
-    // });
-});
-=======
 (function() {
   var row = "";
-  var url = "//whooyou.com/api/jazzwomen/classlist/5";
+  var url = "http://whooyou.com/api/jazzwomen/classlist/5";
   var items = [];
   $.getJSON( url, {
     format: "json"
@@ -159,12 +97,10 @@ jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
           row += "</li></div><p>&nbsp;</p>";
           console.log(row)
           row = row.replace(/'/g, "\'")
-
     });
     $(row).appendTo( ".col-centered ul" );  
     });
 })();
->>>>>>> parent of 8afc456... commit #4
 </script>
 
 </body>
