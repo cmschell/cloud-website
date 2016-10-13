@@ -27,6 +27,12 @@
 
   </style>
 
+<script>
+$(document).ready(function() {
+var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
+jQuery('.navbar-nav li:eq(3)').attr('href',httpURL);
+});
+</script>
 
 </head>
 <body style="background-color: #dcd6d9;">
@@ -56,7 +62,7 @@
       <li><a href="../index.html">Home</a></li>
       <li><a href="one.html">Assignment 1</a></li>
       <li><a href="two.html">Assignment 2</a></li> 
-      <li class="active"><a href="three.html">Assignment 3</a></li> 
+      <li class="active"><a>Assignment 3</a></li> 
     </ul>
   </div>
 </nav>
@@ -74,32 +80,62 @@
 
 </body>
 <script>
-(function() {
-  var row = "";
-  var url = "http://whooyou.com/api/jazzwomen/classlist/5";
-  var items = [];
-  $.getJSON( url, {
-    format: "json"
-  })
-    .done(function(data) {
-      Object.keys(data).forEach(function( object ) {
-      console.log(data);
-          console.log(data[object])
-          row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
-          row += "<li style=\"list-style: none;\">";
-          row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
-          row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
-          _tempUrl = data[object]["Website"].replace(/\"/g,"");
-          row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
-          row += data[object]["Description"]+"</p>";
-          row += "</li></div><p>&nbsp;</p>";
-          console.log(row)
-          row = row.replace(/'/g, "\'")
+// (function() {
+//   var row = "";
+//   var url = "http://whooyou.com/api/jazzwomen/classlist/5";
+  // $.getJSON( url, {
+  //   format: "json"
+  // })
+  $(document).ready(function() {
+        $.ajax({
+          url: 'http://whooyou.com/api/jazzwomen/classlist/5',
+          type: 'GET',
+          dataType: 'json',
+          success: function(data) {
+                    Object.keys(data).forEach(function( object ) {
+                    console.log(data);
+                        console.log(data[object])
+                        row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
+                        row += "<li style=\"list-style: none;\">";
+                        row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
+                        row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
+                        _tempUrl = data[object]["Website"].replace(/\"/g,"");
+                        row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
+                        row += data[object]["Description"]+"</p>";
+                        row += "</li></div><p>&nbsp;</p>";
+                        console.log(row)
+                        row = row.replace(/'/g, "\'")
 
-    });
-    $(row).appendTo( ".col-centered ul" );  
-    });
-})();
+                  });
+                  $(row).appendTo( ".col-centered ul" );  
+                  },
+          error: function() { alert('There was an error retrieving musician information'); },
+          beforeSend: setHeader
+        });
+
+      function setHeader(xhr) {
+        xhr.setRequestHeader('Content-Security-Policy', 'upgrade-insecure-requests'); 
+        //xhr.setRequestHeader('passkey', 'Bar');
+      }
+    //   (function(data) {
+    //   Object.keys(data).forEach(function( object ) {
+    //   console.log(data);
+    //       console.log(data[object])
+    //       row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
+    //       row += "<li style=\"list-style: none;\">";
+    //       row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
+    //       row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
+    //       _tempUrl = data[object]["Website"].replace(/\"/g,"");
+    //       row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
+    //       row += data[object]["Description"]+"</p>";
+    //       row += "</li></div><p>&nbsp;</p>";
+    //       console.log(row)
+    //       row = row.replace(/'/g, "\'")
+
+    // });
+    // $(row).appendTo( ".col-centered ul" );  
+    // });
+});
 </script>
 
 </body>
