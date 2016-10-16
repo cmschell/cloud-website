@@ -16,6 +16,13 @@
 
 	<title>Home</title>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+    var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
+    jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
+    });
+  </script>
+
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -144,6 +151,11 @@
 </div>
 </div>
 </div>
+
+<div class="footer">
+      <p>&copy; 2016 - My Awesome Site</p>
+</div>
+
 </body>
 
 
