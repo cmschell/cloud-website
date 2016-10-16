@@ -99,6 +99,7 @@
     <h3>National University Kearny Mesa - 32&deg;48'35.9 N 117&deg;08'56.7 W</h3>
   <div class="row" style="border:0;">  
   <div class="col-md-6">
+      <input id="pac-input-sattelite" class="controls" style="display:none;" type="text" placeholder="Search Box">
       <div id="satellite"></div>
   </div>
   <div class="col-md-6">
@@ -115,7 +116,7 @@
   </div>
   <div class="row" style="border:0;">  
   <div class="col-md-6">
-      <input id="pac-input-hybrid" class="controls" type="text" placeholder="Search Box">
+      <input id="pac-input-hybrid" class="controls" style="width:250px;" type="text" placeholder="Search Box">
       <div id="hybrid"></div>
   </div>
   <div class="col-md-6">
@@ -171,11 +172,10 @@
       data: {}, // Additional parameters here
       dataType: 'json',
       success: function(data) {
-        //
-          //Change data.source to data.something , where something is whichever part of the object you want returned.
-          //To see the whole object you can output it to your browser console using:
-          //console.log(data);
-          document.getElementById("quote").innerHTML = data.quote; 
+        //Change data.source to data.something , where something is whichever part of the object you want returned.
+        //To see the whole object you can output it to your browser console using:
+        //console.log(data);
+        document.getElementById("quote").innerHTML = data.quote; 
         $("#author").html(data.author);
         $("#category").html(data.category);
         //$("a").attr("data-text", data.quote);
@@ -199,11 +199,6 @@
   });
   };
 </script>
-
-
-
-
-
 
 </body>
 </html>
