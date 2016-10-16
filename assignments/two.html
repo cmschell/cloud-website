@@ -23,7 +23,12 @@
 
   <title>Widgets</title>
 
-
+    <script type="text/javascript">
+      $(document).ready(function() {
+      var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
+      jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
+      });
+  </script>
 
 </head>
 <body style="background-color: #dcd6d9;">
@@ -54,6 +59,7 @@
       <li><a href="one.html">Assignment 1</a></li>
       <li class="active"><a href="two.html">Assignment 2</a></li> 
       <li><a href="three.html">Assignment 3</a></li> 
+      <li><a href="final.html">Final</a></li>
     </ul>
   </div>
 </nav>

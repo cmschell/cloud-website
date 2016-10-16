@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
 }
-#map {
+#map, #satellite, #hybrid {
 height: 400px;
 width: 100%;
 }
@@ -50,4 +50,9 @@ width: 100%;
 }
 #target {
   width: 345px;
+}
+
+.between-maps {
+  height: 50px;
+  background-color: white;
 }

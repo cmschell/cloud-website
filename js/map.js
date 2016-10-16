@@ -1,22 +1,49 @@
-function initAutocomplete() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-            lat: 32.7157,
-            lng: -117.1611
-        },
-        zoom: 13,
-        mapTypeId: 'roadmap'
-    });
-
+function createSearchBox(mapObj, type) {
     // Create the search box and link it to the UI element.
-    var input = document.getElementById('pac-input');
-    var searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    window.input = document.getElementById(type);
+    window.searchBox = new google.maps.places.SearchBox(window.input);
+
+    mapObj.controls[google.maps.ControlPosition.TOP_LEFT].push(window.input);
+        
+    // Bias the SearchBox results towards current map's viewport.
+    mapObj.addListener('bounds_changed', function() {
+        window.searchBox.setBounds(mapObj.getBounds());
+    });
 
     // Bias the SearchBox results towards current map's viewport.
-    map.addListener('bounds_changed', function() {
-        searchBox.setBounds(map.getBounds());
+    mapObj.addListener('bounds_changed', function() {
+        window.searchBox.setBounds(mapObj.getBounds());
     });
+}
+
+function createMapObj(type) {
+    var lat = (document.location.pathname.indexOf('/assignments/two.html') > -1) ? 32.7157 : 32.809906;
+    var long = (document.location.pathname.indexOf('/assignments/two.html') > -1) ? -117.1611 : -117.148945;
+    var mapId = (document.location.pathname.indexOf('/assignments/two.html') > -1) ? "map": type;
+
+    var map = new google.maps.Map(document.getElementById(mapId), {
+        center: {
+            lat: lat,
+            lng: long
+        },
+        zoom: 14, 
+        mapTypeId: type
+        }
+    );
+
+    var myLatLng = {lat: lat, lng: long};
+
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Pin'
+    });
+
+    return map;
+
+}
+
+function createMarker(mapObj) {
 
     var markers = [];
     // Listen for the event fired when the user selects a prediction and retrieve
@@ -51,7 +78,7 @@ function initAutocomplete() {
 
             // Create a marker for each place.
             markers.push(new google.maps.Marker({
-                map: map,
+                map: mapObj,
                 icon: icon,
                 title: place.name,
                 position: place.geometry.location
@@ -64,6 +91,34 @@ function initAutocomplete() {
                 bounds.extend(place.geometry.location);
             }
         });
-        map.fitBounds(bounds);
+        mapObj.fitBounds(bounds);
     });
+
+}
+
+function initAutocomplete() {
+
+    // Create different maps
+    if (document.location.pathname.indexOf('/assignments/two.html') > -1) {
+        var map = createMapObj('roadmap','map');
+    } else {
+        var satellite = createMapObj('satellite');
+        var hybrid = createMapObj('hybrid');
+
+    }
+
+    if (document.location.pathname.indexOf('/assignments/two.html') > -1) {
+        createSearchBox(map, 'pac-input');
+    } else {
+        createSearchBox(satellite, 'pac-input-sattelite');
+        createSearchBox(hybrid, 'pac-input-hybrid');
+
+    }
+
+    if (document.location.pathname.indexOf('/assignments/two.html') > -1) {
+        createMarker(map);               
+    } else {
+        createMarker(satellite);
+        createMarker(hybrid);
+    }
 }

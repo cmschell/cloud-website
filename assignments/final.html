@@ -1,0 +1,209 @@
+<!-- TODO: Fix responsive header (jumbotron) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- jQuery -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
+  <script src="../js/map.js"></script>
+
+  <link rel="stylesheet" href="../css/map.css">    
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src='../js/voicerss-tts.min.js'></script>
+
+  <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+
+  <title>Final</title>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+      var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
+      jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
+      });
+    </script>
+
+    <style>
+
+    .map-text {
+      font-size: 16px;
+      margin-top: 40px;
+    }
+
+
+    </style>
+
+
+</head>
+<body onload="doIt()" style="background-color: #dcd6d9;">
+<div style="background-color:#985e6d;">
+    <div class="hidden-sm hidden-xs" style="height: 100px; font-size: large;padding-left:20px;padding-top:10px;background-color:#985e6d;">
+    <div style="display: inline-block;">
+        <img src="../img/me.jpg" height="70" />
+
+        <div style="display: inline-block; padding-left: 20px; vertical-align: top;color: white;">
+          <h3 style="margin-top:0px;">Christina Schell</h3>
+
+          <h4 style="margin-top:-10px;">DAT 605 Cloud Computing / Development</h4>
+        </div>
+      </div>
+
+      <div style="display: inline-block; float: right;padding-right:20px;">
+        <div style="display: inline-block;"><img src="../img/nu.png" width=
+        "70" /> <img src="../img/corner.gif" height="70" /></div>
+      </div>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="one.html">Assignment 1</a></li>
+      <li><a href="two.html">Assignment 2</a></li> 
+      <li><a href="three.html">Assignment 3</a></li>  
+      <li class="active"><a href="final.html">Final</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="col-lg-12 col-centered">
+    <div class="row" style="padding:40px">
+    <h1 style="text-align: center;">Christina Schell: Final Exam</h1>
+    <div id="voice">
+      <p>Click the "Greeting" link to hear your greeting!</p>
+      <a href="#"><img style="padding-right: 15px;height:40px;" src="../img/voice_rss_feed.png"/></a><a href="#">Greeting</a>
+    </div>
+    <p>&nbsp;</p>
+    <div class="quotes">    
+    <p style="font-size:16px">Quotes</p>
+      <button onclick="doIt()" id="refresher" class="btn btn-primary">refresh</button>
+      <button id="new-button"></button>
+
+      <h4 id="quote"></h4>
+      <h5 id="author"></h5>
+      <h5 id="category">category</h5>
+    </div>
+    <p>&nbsp;</p>
+    <h3>National University Kearny Mesa - 32&deg;48'35.9 N 117&deg;08'56.7 W</h3>
+  <div class="row" style="border:0;">  
+  <div class="col-md-6">
+      <div id="satellite"></div>
+  </div>
+  <div class="col-md-6">
+      <p class="map-text">Satellite<br/>
+      National University Kearny Mesa<br/>
+      3678 Aero Ct<br/> San Diego, CA 92123</p>
+      <p>url: <a href="https://developers.google.com/maps/documentation/javascript/tutorial">https://developers.google.com/maps/documentation/javascript/tutorial</a></p>
+  </div>
+  </div>
+  <div class="row" style="border:0">
+  <div class="col-md-6 between-maps text-center">
+  <p style="padding-top: 15px;">Enter location in the search box below to see on both maps.</p>
+  </div>
+  </div>
+  <div class="row" style="border:0;">  
+  <div class="col-md-6">
+      <input id="pac-input-hybrid" class="controls" type="text" placeholder="Search Box">
+      <div id="hybrid"></div>
+  </div>
+  <div class="col-md-6">
+      <p class="map-text">Hybrid<br/>
+      National University Kearny Mesa<br/>
+      3678 Aero Ct<br/> San Diego, CA 92123</p>
+      <p>url: <a href="https://developers.google.com/maps/documentation/javascript/tutorial">https://developers.google.com/maps/documentation/javascript/tutorial</a></p>
+  </div>
+  </div>
+
+</div>
+</div>
+
+<div class="footer">
+      <p>&copy; 2016 - My Awesome Site</p>
+</div>
+
+
+
+<!-- Voice RSS -->
+<script>
+    jQuery(document).ready(function(){
+
+        jQuery(document.body).on('mousedown','#voice a', function() {
+            VoiceRSS.speech({
+                key: '4155ef30769544489c2a3cc776c1bc83',
+                src: 'Hello, welcome to the final page of my site! Hope you are having a great day!',
+                hl: 'en-us',
+                r: 0, 
+                c: 'mp3',
+                f: '44khz_16bit_stereo',
+                ssml: false
+            });
+        });
+    });        
+
+</script>
+
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmp0jJOIFOuUjBqSuiQzz8aafdkXrMjuU&libraries=places&callback=initAutocomplete"
+     async defer></script>
+
+
+<script>
+  var url = 'https://andruxnet-random-famous-quotes.p.mashape.com/';
+  var key = "Vy2idha984mshxYvJADMuaolUqcip1P0Wn7jsnnmBImNmtPjgI";
+  var aaa ="";
+
+  function doIt() { 
+   var output = $.ajax({
+      url: url, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+      type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+      data: {}, // Additional parameters here
+      dataType: 'json',
+      success: function(data) {
+        //
+          //Change data.source to data.something , where something is whichever part of the object you want returned.
+          //To see the whole object you can output it to your browser console using:
+          //console.log(data);
+          document.getElementById("quote").innerHTML = data.quote; 
+        $("#author").html(data.author);
+        $("#category").html(data.category);
+        //$("a").attr("data-text", data.quote);
+        
+       $("#new-button").empty();
+        
+        twttr.widgets.createShareButton(
+    'https://dev.twitter.com/',
+    document.getElementById('new-button'),
+    {
+      count: 'none',
+      text: data.quote
+    }).then(function (el) {});
+        
+        
+          },
+      error: function(err) { alert(err); },
+      beforeSend: function(xhr) {
+      xhr.setRequestHeader("X-Mashape-Authorization", key); // Enter here your Mashape key
+      }
+  });
+  };
+</script>
+
+
+
+
+
+
+</body>
+</html>
