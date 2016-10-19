@@ -26,8 +26,8 @@
   <script type="text/javascript">
 
     var singerData = function() {
-    if(jQuery('.col-centered ul li')) {
-      jQuery('.col-centered ul li').remove();
+    if(jQuery('.col-centered ul div.singers')) {
+      jQuery('.col-centered ul div.singers').remove();
     }  
 
     var row = "";
@@ -101,7 +101,7 @@
 
 <div class="main-content">
   <div class="col-md-10 col-centered">
-    <div class="row" style="padding:40px">
+    <div class="singers row" style="padding:40px">
     <h1 style="font-size: 24px">Assignment 3</h1>
     <h4 style="font-size: 16px">Women of Jazz</h4>
     <button value="Refresh" onclick="singerData()">Refresh</button>
