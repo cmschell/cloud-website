@@ -40,7 +40,7 @@
         Object.keys(data).forEach(function( object ) {
         //console.log(data);
             //console.log(data[object])
-            row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
+            row += "<div class=\"singers row\" style=\"border:1px solid #985e6d\">";
             row += "<li style=\"list-style: none;\">";
             row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
             row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
@@ -101,7 +101,7 @@
 
 <div class="main-content">
   <div class="col-md-10 col-centered">
-    <div class="singers row" style="padding:40px">
+    <div class="row" style="padding:40px">
     <h1 style="font-size: 24px">Assignment 3</h1>
     <h4 style="font-size: 16px">Women of Jazz</h4>
     <button value="Refresh" onclick="singerData()">Refresh</button>
