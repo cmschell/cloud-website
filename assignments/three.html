@@ -27,7 +27,7 @@
 
     var singerData = function() {
     if(jQuery('.col-centered ul div.singers')) {
-      jQuery('.col-centered ul div.singers').remove();
+      jQuery('.col-centered ul div.singers, .col-centered ul p.singerInfo').remove();
     }  
 
     var row = "";
@@ -43,7 +43,7 @@
             row += "<div class=\"singers row\" style=\"border:1px solid #985e6d\">";
             row += "<li style=\"list-style: none;\">";
             row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
-            row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
+            row += "<p class=\'singerInfo\'>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
             _tempUrl = data[object]["Website"].replace(/\"/g,"");
             row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
             row += data[object]["Description"]+"</p>";
