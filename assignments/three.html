@@ -24,36 +24,42 @@
   </style>
   
   <script type="text/javascript">
+
+    var singerData = function() {
+    if(jQuery('.col-centered ul li')) {
+      jQuery('.col-centered ul li').remove();
+    }  
+
+    var row = "";
+    var url = "http://whooyou.com/api/jazzwomen/classlist/5";
+    var items = [];
+    $.getJSON( url, {
+      format: "json"
+    })
+      .done(function(data) {
+        Object.keys(data).forEach(function( object ) {
+        //console.log(data);
+            //console.log(data[object])
+            row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
+            row += "<li style=\"list-style: none;\">";
+            row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
+            row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
+            _tempUrl = data[object]["Website"].replace(/\"/g,"");
+            row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
+            row += data[object]["Description"]+"</p>";
+            row += "</li></div><p>&nbsp;</p>";
+            //console.log(row)
+            row = row.replace(/'/g, "\'")
+      });
+      $(row).appendTo( ".col-centered ul" );  
+      });
+
     $(document).ready(function() {
     var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
     jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
     });
   
-    var singerData = function() {
-      var row = "";
-      var url = "http://whooyou.com/api/jazzwomen/classlist/5";
-      var items = [];
-      $.getJSON( url, {
-        format: "json"
-      })
-        .done(function(data) {
-          Object.keys(data).forEach(function( object ) {
-          //console.log(data);
-              //console.log(data[object])
-              row += "<div class=\"row\" style=\"border:1px solid #985e6d\">";
-              row += "<li style=\"list-style: none;\">";
-              row += "<img class=\"pull-left img-gap\" src=\""+data[object]["picUrl"]+"\" height=\"100\" alt=\""+data[object]["fname"]+ data[object]["lname"]+"\"/>";
-              row += "<p>"+data[object]["fname"]+ data[object]["lname"]+"<br/>";
-              _tempUrl = data[object]["Website"].replace(/\"/g,"");
-              row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
-              row += data[object]["Description"]+"</p>";
-              row += "</li></div><p>&nbsp;</p>";
-              //console.log(row)
-              row = row.replace(/'/g, "\'")
-        });
-        $(row).appendTo( ".col-centered ul" );  
-        });
-    }
+}
 </script>
 
 
@@ -88,7 +94,7 @@
       <li><a href="one.html">Assignment 1</a></li>
       <li><a href="two.html">Assignment 2</a></li> 
       <li class="active"><a href="three.html">Assignment 3</a></li> 
-      <!--<li><a href="final.html">Final</a></li>-->
+      <!--<li><a href="final.html">Final</a></li/>-->
     </ul>
   </div>
 </nav>
@@ -100,7 +106,7 @@
     <h4 style="font-size: 16px">Women of Jazz</h4>
     <button value="Refresh" onclick="singerData()">Refresh</button>
     <div class="col-centered">
-      <ul></ul>
+      <ul><li>blah blah</li></ul>
     </div>
     </div>
   </div>
@@ -108,7 +114,7 @@
 <div class="footer">
       <p>&copy; 2016 - My Awesome Site</p>
 </div>
-</body>
+
 
 
 </body>
