@@ -31,7 +31,7 @@
     }  
 
     var row = "";
-    var url = "https://whooyou.azurewebsites.net/api/jazzwomen/classlist/5";
+    var url = "//whooyou.azurewebsites.net/api/jazzwomen/classlist/5";
     var items = [];
     $.getJSON( url, {
       format: "jsonp",
@@ -55,10 +55,10 @@
       $(row).appendTo( ".col-centered ul" );  
       });
 
-    // $(document).ready(function() {
-    // var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
-    // jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
-    // });
+    $(document).ready(function() {
+    var httpURL = "http://"+document.location.hostname+"/assignments/three.html";
+    jQuery('.navbar-nav li:eq(3)').attr('href',window.location);
+    });
   
 }
 </script>
