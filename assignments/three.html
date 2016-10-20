@@ -47,7 +47,7 @@
             _tempUrl = data[object]["Website"].replace(/\"/g,"");
             row += "<a href=\""+_tempUrl+"\">"+_tempUrl+"</a><br/>";
             row += data[object]["Description"]+"</p>";
-            row += "</li></div><p>&nbsp;</p>";
+            row += "</li><p>&nbsp;</p></div>";
             //console.log(row)
             row = row.replace(/'/g, "\'")
       });
