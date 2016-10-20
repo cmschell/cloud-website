@@ -34,8 +34,7 @@
     var url = "//whooyou.com/api/jazzwomen/classlist/5";
     var items = [];
     $.getJSON( url, {
-      format: "jsonp",
-      crossDomain: true
+      format: "json"
     })
       .done(function(data) {
         Object.keys(data).forEach(function( object ) {
